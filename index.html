@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>中国国家安全塌房式腐败</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ff0000;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* 闪烁动画 */
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 2px 2px 4px #000; }
+            50% { text-shadow: 2px 2px 4px #000, 0 0 20px rgba(255, 0, 0, 0.3); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+
+        /* 头部区域 */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #1a0000 0%, #0a0a0a 100%);
+            border-bottom: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 0, 0, 0.03) 2px,
+                rgba(255, 0, 0, 0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #ff3333;
+            letter-spacing: 0.5em;
+            animation: glow 2s ease-in-out infinite;
+            border: 2px solid #ff0000;
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top: 20px;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+                box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
+                box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
+            }
+        }
+
+        /* 主内容区 */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 视频区域 */
+        .video-section {
+            margin-bottom: 60px;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        .video-container {
+            background: #1a0a0a;
+            border: 2px solid #ff0000;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .video-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ff3333;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 博客文章区域 */
+        .blog-section {
+            margin-top: 80px;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px #ff0000;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%);
+            border: 1px solid #ff0000;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .blog-card:hover::before {
+            left: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.4);
+            border-color: #ff3333;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ff0000;
+        }
+
+        .blog-card .date {
+            font-size: 0.9rem;
+            color: #ff6666;
+            margin-bottom: 15px;
+        }
+
+        .blog-card p {
+            color: #cc0000;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .blog-card .read-more {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff0000;
+            text-decoration: none;
+            border: 1px solid #ff0000;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card .read-more:hover {
+            background: #ff0000;
+            color: #000;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #ff0000;
+            margin-top: 80px;
+            background: linear-gradient(0deg, #1a0000 0%, #0a0a0a 100%);
+        }
+
+        footer p {
+            color: #ff3333;
+            font-size: 1rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 0.2em;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff3333;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function playNuclearAlarm() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const now = audioContext.currentTime;
+            const duration = 8;
+
+            // 创建混响效果
+            function createReverb() {
+                const convolver = audioContext.createConvolver();
+                const reverbLength = 1.5;
+                const reverbBuffer = audioContext.createBuffer(2, audioContext.sampleRate * reverbLength, audioContext.sampleRate);
+                for (let channel = 0; channel < 2; channel++) {
+                    const data = reverbBuffer.getChannelData(channel);
+                    for (let i = 0; i < data.length; i++) {
+                        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * 0.3));
+                    }
+                }
+                convolver.buffer = reverbBuffer;
+                return convolver;
+            }
+
+            // 1. 主警报音 - 双音交替 (类似生化危机)
+            function createMainAlarm() {
+                const osc1 = audioContext.createOscillator();
+                const osc2 = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                const reverb = createReverb();
+                const reverbGain = audioContext.createGain();
+
+                osc1.connect(gain);
+                osc2.connect(gain);
+                gain.connect(audioContext.destination);
+                gain.connect(reverb);
+                reverb.connect(reverbGain);
+                reverbGain.connect(audioContext.destination);
+                reverbGain.gain.value = 0.2;
+
+                osc1.type = 'square';
+                osc2.type = 'square';
+
+                // 双音交替：高-低-高-低
+                for (let i = 0; i < 16; i++) {
+                    const t = now + i * 0.5;
+                    if (i % 2 === 0) {
+                        osc1.frequency.setValueAtTime(880, t);
+                        osc2.frequency.setValueAtTime(440, t);
+                    } else {
+                        osc1.frequency.setValueAtTime(660, t);
+                        osc2.frequency.setValueAtTime(330, t);
+                    }
+                }
+
+                // 音量包络 - 脉冲式
+                gain.gain.setValueAtTime(0, now);
+                for (let i = 0; i < 16; i++) {
+                    const t = now + i * 0.5;
+                    gain.gain.setValueAtTime(0, t);
+                    gain.gain.linearRampToValueAtTime(0.25, t + 0.05);
+                    gain.gain.setValueAtTime(0.25, t + 0.35);
+                    gain.gain.linearRampToValueAtTime(0, t + 0.45);
+                }
+
+                osc1.start(now);
+                osc2.start(now);
+                osc1.stop(now + duration);
+                osc2.stop(now + duration);
+            }
+
+            // 2. 低频威胁音 - 持续的压迫感 (类似辐射/末日氛围)
+            function createDreadTone() {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                const filter = audioContext.createBiquadFilter();
+
+                osc.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioContext.destination);
+
+                osc.type = 'sawtooth';
+                filter.type = 'lowpass';
+                filter.frequency.value = 200;
+                filter.Q.value = 10;
+
+                // 缓慢起伏的低频
+                osc.frequency.setValueAtTime(40, now);
+                osc.frequency.linearRampToValueAtTime(60, now + 2);
+                osc.frequency.linearRampToValueAtTime(40, now + 4);
+                osc.frequency.linearRampToValueAtTime(70, now + 6);
+                osc.frequency.linearRampToValueAtTime(40, now + 8);
+
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.3, now + 0.5);
+                gain.gain.setValueAtTime(0.3, now + 7);
+                gain.gain.linearRampToValueAtTime(0, now + 8);
+
+                osc.start(now);
+                osc.stop(now + duration);
+            }
+
+            // 3. 金属撞击声 - 机械感 (每2秒一次重击)
+            function createMetalHit(startTime) {
+                const osc = audioContext.createOscillator();
+                const noise = audioContext.createBufferSource();
+                const noiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.2, audioContext.sampleRate);
+                const noiseData = noiseBuffer.getChannelData(0);
+                for (let i = 0; i < noiseData.length; i++) {
+                    noiseData[i] = Math.random() * 2 - 1;
+                }
+                noise.buffer = noiseBuffer;
+
+                const oscGain = audioContext.createGain();
+                const noiseGain = audioContext.createGain();
+                const noiseFilter = audioContext.createBiquadFilter();
+
+                osc.connect(oscGain);
+                noise.connect(noiseFilter);
+                noiseFilter.connect(noiseGain);
+                oscGain.connect(audioContext.destination);
+                noiseGain.connect(audioContext.destination);
+
+                noiseFilter.type = 'bandpass';
+                noiseFilter.frequency.value = 3000;
+                noiseFilter.Q.value = 2;
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(150, startTime);
+                osc.frequency.exponentialRampToValueAtTime(50, startTime + 0.3);
+
+                oscGain.gain.setValueAtTime(0.4, startTime);
+                oscGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.4);
+
+                noiseGain.gain.setValueAtTime(0.15, startTime);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.15);
+
+                osc.start(startTime);
+                osc.stop(startTime + 0.5);
+                noise.start(startTime);
+                noise.stop(startTime + 0.2);
+            }
+
+            // 4. 电子蜂鸣 - 数字科技感
+            function createDigitalBeep() {
+                for (let i = 0; i < 8; i++) {
+                    const osc = audioContext.createOscillator();
+                    const gain = audioContext.createGain();
+
+                    osc.connect(gain);
+                    gain.connect(audioContext.destination);
+
+                    osc.type = 'sine';
+                    osc.frequency.value = 1200 + Math.random() * 200;
+
+                    const t = now + 0.25 + i * 1;
+                    gain.gain.setValueAtTime(0, t);
+                    gain.gain.linearRampToValueAtTime(0.08, t + 0.02);
+                    gain.gain.linearRampToValueAtTime(0.08, t + 0.08);
+                    gain.gain.linearRampToValueAtTime(0, t + 0.1);
+
+                    osc.start(t);
+                    osc.stop(t + 0.15);
+                }
+            }
+
+            // 执行所有音效
+            createMainAlarm();
+            createDreadTone();
+            createDigitalBeep();
+            createMetalHit(now + 0.5);
+            createMetalHit(now + 2.5);
+            createMetalHit(now + 4.5);
+            createMetalHit(now + 6.5);
+        }
+
+        function enterSite() {
+            document.getElementById('entry-screen').style.display = 'none';
+            playNuclearAlarm();
+        }
+    </script>
+
+    <div id="entry-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 99999; display: flex; justify-content: center; align-items: center;">
+        <button onclick="enterSite()" style="background: transparent; border: 3px solid #ff0000; color: #ff0000; font-size: 2rem; padding: 20px 60px; cursor: pointer; font-family: inherit; animation: glow 2s ease-in-out infinite; transition: all 0.3s;">
+            进 入 网 站
+        </button>
+    </div>
+
+    <header>
+        <h1>中国国家安全塌房式腐败</h1>
+        <div class="subtitle">公安反腐，剑指黑恶！</div>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <h2>视频揭露</h2>
+
+            <div class="video-container">
+                <div class="video-title">中国国家安全塌房式腐败</div>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/lkOTyy6oj-A"
+                        title="中国国家安全塌房式腐败"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-title">我都把痰都吐到亮着爆闪的警车身上了，公安都不敢来找我麻烦</div>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/9f9utulaJts"
+                        title="公安都不敢来找我麻烦"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-title">重铸</div>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/972RG5fd4ls"
+                        title="重铸"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <h2>深度揭露</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <h3>梆梆安全的腐败问题</h3>
+                    <div class="date">2025年</div>
+                    <p>揭露梆梆安全公司内部的腐败问题，深入分析其与国家安全系统的关联...</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+
+                <article class="blog-card">
+                    <h3>北京市公安局的秘密</h3>
+                    <div class="date">2025年</div>
+                    <p>当权力失去监督，当正义无法伸张，是时候让真相大白于天下...</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+
+                <article class="blog-card">
+                    <h3>塌房式腐败的根源</h3>
+                    <div class="date">2025年</div>
+                    <p>系统性腐败是如何形成的？从个案到全局，深度剖析腐败的形成机制...</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>真相不会永远沉默 | 正义终将到来</p>
+    </footer>
+</body>
+</html>
