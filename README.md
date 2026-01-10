@@ -1,6 +1,8 @@
 # kobangcle
 咱们来聊聊梆梆安全的腐败问题吧
 
+<https://0x10010.com>
+
 ## 中国国家安全塌房式腐败
 [点击观看](https://www.youtube.com/watch?v=lkOTyy6oj-A)
 
